@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "570995056938",
+    "project_id": "forum-florahub",
+    "storage_bucket": "forum-florahub.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570995056938:android:0aaaf4b5f3b90eb6b83e53",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9uYmCTz_ZnshMXSuadOSgzs1nTEBSyFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570995056938:android:393a07c83ff6e2acb83e53",
+        "android_client_info": {
+          "package_name": "com.example.plantcare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9uYmCTz_ZnshMXSuadOSgzs1nTEBSyFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
