@@ -42,12 +42,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyDsfxEyzG7_U5OVWid8Ezxm01hMfEKlPYI',
-    appId: '1:570995056938:web:bb8de99f0d35b0e4b83e53',
+    appId: '1:570995056938:web:6edd98d288d08435b83e53',
     messagingSenderId: '570995056938',
     projectId: 'forum-florahub',
     authDomain: 'forum-florahub.firebaseapp.com',
     storageBucket: 'forum-florahub.firebasestorage.app',
-    measurementId: 'G-KZTR6LMPYX',
+    measurementId: 'G-2NXDFF6BBT',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
@@ -57,7 +57,6 @@ class DefaultFirebaseOptions {
     projectId: 'forum-florahub',
     storageBucket: 'forum-florahub.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDMwxsMf8IMo292VO64Lk4sFJgqz6Cw8cI',
     appId: '1:570995056938:ios:adf7e49298e51bc6b83e53',
@@ -66,7 +65,6 @@ class DefaultFirebaseOptions {
     storageBucket: 'forum-florahub.firebasestorage.app',
     iosBundleId: 'com.example.plantcare',
   );
-
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyDMwxsMf8IMo292VO64Lk4sFJgqz6Cw8cI',
     appId: '1:570995056938:ios:adf7e49298e51bc6b83e53',

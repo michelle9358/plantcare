@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Documentação técnica do aplicativo PlantCare desenvolvido com Flutter.">
+  <title>PlantCare Docs | Manual técnico</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio">
+      <span class="brand-icon">🌱</span>
+      <span>PlantCare <span class="docs">Docs</span></span>
+    </a>
+    <span class="topbar-label">Manual técnico</span>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <p class="nav-title">DOCUMENTAÇÃO</p>
+      <a class="nav-link active" href="#inicio">Visão geral</a>
+      <a class="nav-link" href="#requisitos">Pré-requisitos</a>
+      <a class="nav-link" href="#instalacao">Instalação</a>
+      <a class="nav-link" href="#execucao">Executar o projeto</a>
+      <a class="nav-link" href="#estrutura">Estrutura do código</a>
+      <a class="nav-link" href="#telas">Telas do aplicativo</a>
+      <a class="nav-link" href="#firebase">Firebase e dados</a>
+      <a class="nav-link" href="#manutencao">Manutenção</a>
+      <a class="nav-link" href="#problemas">Solução de problemas</a>
+
+      <div class="sidebar-note">
+        <strong>PlantCare</strong>
+        <p>Documentação para desenvolvedores e estudantes.</p>
+      </div>
+    </aside>
+
+    <main id="inicio">
+      <div class="breadcrumbs">Documentação <span>/</span> Introdução</div>
+
+      <p class="eyebrow">GUIA DO PROJETO</p>
+      <h1>Comece com o PlantCare</h1>
+      <p class="lead">
+        Entenda como o aplicativo está organizado, prepare o ambiente
+        de desenvolvimento e descubra como executar e manter o projeto.
+      </p>
+
+      <div class="info-box">
+        <strong>O que você vai aprender</strong>
+        <ul>
+          <li>Preparar o ambiente Flutter.</li>
+          <li>Instalar as dependências do projeto.</li>
+          <li>Executar o aplicativo no navegador.</li>
+          <li>Localizar as telas, os modelos e os serviços.</li>
+          <li>Entender a persistência de dados com Firebase.</li>
+        </ul>
+      </div>
+
+      <h2>O que é o PlantCare?</h2>
+      <p>
+        PlantCare é um aplicativo de organização dos cuidados com plantas.
+        Ele reúne informações como nome, espécie, rega e iluminação,
+        além das outras funcionalidades disponíveis na versão atual.
+      </p>
+      <p>
+        Este manual foi criado para ajudar uma pessoa que ainda não conhece
+        o projeto a compreender sua estrutura e realizar alterações com
+        mais segurança.
+      </p>
+
+      <h2 id="requisitos">1. Pré-requisitos</h2>
+      <p>Antes de executar o projeto, confira se você possui:</p>
+      <ul>
+        <li>Flutter SDK instalado e configurado.</li>
+        <li>Visual Studio Code com as extensões Flutter e Dart.</li>
+        <li>Git instalado, caso vá clonar o repositório.</li>
+        <li>Google Chrome, para executar a versão web.</li>
+        <li>A configuração Firebase usada pelo projeto.</li>
+        <li>Conexão com a internet para acessar os serviços Firebase.</li>
+      </ul>
+      <p>
+        Consulte também o
+        <a href="https://docs.flutter.dev/install/quick" target="_blank" rel="noopener noreferrer">
+          guia oficial de instalação do Flutter
+        </a>.
+      </p>
+
+      <h2 id="instalacao">2. Instalação do projeto</h2>
+      <p>
+        Abra o projeto no VS Code. O terminal precisa estar na pasta
+        principal, onde se encontra o arquivo <code>pubspec.yaml</code>.
+      </p>
+
+      <div class="step">
+        <span class="step-number">1</span>
+        <div>
+          <h3>Abra a pasta correta</h3>
+          <p>No VS Code, selecione a pasta raiz do PlantCare.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-number">2</span>
+        <div>
+          <h3>Instale as dependências</h3>
+          <p>Execute este comando no terminal:</p>
+          <pre><code>flutter pub get</code></pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-number">3</span>
+        <div>
+          <h3>Confira a configuração</h3>
+          <p>Para verificar o ambiente Flutter, execute:</p>
+          <pre><code>flutter doctor</code></pre>
+        </div>
+      </div>
+
+      <h2 id="execucao">3. Executando o aplicativo</h2>
+      <p>Para iniciar o PlantCare no Google Chrome, utilize:</p>
+      <pre><code>flutter run -d chrome</code></pre>
+
+      <div class="tip-box">
+        <strong>Dica</strong>
+        <p>
+          Durante o desenvolvimento, salve os arquivos e utilize o hot reload
+          quando disponível. Se ocorrer um erro, consulte primeiro a mensagem
+          exibida no terminal do VS Code.
+        </p>
+      </div>
+
+      <h2 id="estrutura">4. Estrutura do código</h2>
+      <p>
+        O código é separado em arquivos com responsabilidades diferentes.
+        A estrutura exata deve ser conferida na versão atual do repositório.
+      </p>
+      <pre><code>PlantCare/
+├── lib/
+│   ├── main.dart
+│   ├── models/
+│   ├── screens/
+│   └── services/
+├── manual/
+│   ├── index.html
+│   └── style.css
+├── pubspec.yaml
+└── README.md</code></pre>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Arquivo ou pasta</th>
+              <th>Responsabilidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>lib/main.dart</code></td>
+              <td>Inicialização e configuração principal do app.</td>
+            </tr>
+            <tr>
+              <td><code>lib/models/</code></td>
+              <td>Modelos que representam os dados.</td>
+            </tr>
+            <tr>
+              <td><code>lib/screens/</code></td>
+              <td>Telas e interfaces do aplicativo.</td>
+            </tr>
+            <tr>
+              <td><code>lib/services/</code></td>
+              <td>Serviços e operações auxiliares.</td>
+            </tr>
+            <tr>
+              <td><code>pubspec.yaml</code></td>
+              <td>Dependências e configurações do Flutter.</td>
+            </tr>
+            <tr>
+              <td><code>manual/</code></td>
+              <td>Arquivos HTML e CSS desta documentação.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="telas">5. Telas do aplicativo</h2>
+      <h3>Login e cadastro</h3>
+      <p>
+        As telas de autenticação são responsáveis por permitir a entrada
+        e, quando implementado, o registro de novos usuários. Os formulários
+        devem validar os campos e apresentar mensagens adequadas.
+      </p>
+
+      <h3>Início</h3>
+      <p>
+        A tela inicial apresenta os principais acessos e informações
+        disponíveis para o usuário.
+      </p>
+
+      <h3>Plantas</h3>
+      <p>
+        A área de plantas organiza os registros com informações como nome,
+        espécie, rega e iluminação. Consulte a interface atual para verificar
+        quais operações de cadastro, edição e exclusão estão disponíveis.
+      </p>
+
+      <h3>Histórico e perfil</h3>
+      <p>
+        Essas áreas disponibilizam as funcionalidades de histórico e
+        configurações de perfil existentes na versão do aplicativo.
+      </p>
+
+      <h2 id="firebase">6. Firebase e armazenamento de dados</h2>
+      <p>
+        O projeto utiliza Firebase para os recursos configurados. O Firebase
+        Authentication gerencia a autenticação quando habilitado, enquanto
+        o Cloud Firestore armazena documentos na nuvem.
+      </p>
+
+      <pre><code>users/
+  ID_DO_USUARIO/
+    plantas/
+      ID_DA_PLANTA
+    historico/
+      ID_DO_REGISTRO</code></pre>
+
+      <p>
+        Os caminhos acima representam a organização dos dados usada pelo
+        projeto. Os documentos de plantas e histórico pertencem à área
+        identificada pelo usuário.
+      </p>
+
+      <div class="warning-box">
+        <strong>Segurança</strong>
+        <p>
+          As regras do Firestore devem restringir a leitura e a escrita aos
+          dados permitidos para cada usuário autenticado. Nunca utilize regras
+          públicas como solução permanente para erros de permissão.
+        </p>
+      </div>
+
+      <h2 id="manutencao">7. Guia de manutenção</h2>
+
+      <h3>Alterar cores e aparência</h3>
+      <p>
+        Localize no código Flutter o tema utilizado pelo aplicativo.
+        Atualize as cores, salve o arquivo e teste as telas para conferir
+        contraste, legibilidade e consistência visual.
+      </p>
+
+      <h3>Adicionar uma tela</h3>
+      <ol>
+        <li>Crie o arquivo da tela na pasta apropriada.</li>
+        <li>Implemente os componentes e as ações necessárias.</li>
+        <li>Conecte a tela ao sistema de navegação.</li>
+        <li>Teste os caminhos de entrada e retorno.</li>
+      </ol>
+
+      <h3>Adicionar um campo às plantas</h3>
+      <ol>
+        <li>Atualize o modelo de dados.</li>
+        <li>Inclua o campo nos formulários necessários.</li>
+        <li>Atualize a gravação e a leitura no Firestore.</li>
+        <li>Considere como os documentos antigos serão tratados.</li>
+        <li>Teste cadastro, consulta, edição e exclusão.</li>
+      </ol>
+
+      <h3>Verificar alterações</h3>
+      <p>Antes de registrar uma mudança, execute:</p>
+      <pre><code>flutter pub get
+flutter analyze
+flutter run -d chrome</code></pre>
+
+      <h2 id="problemas">8. Solução de problemas</h2>
+      <div class="problem">
+        <h3>O aplicativo não abre</h3>
+        <p>
+          Confira a saída do terminal, execute <code>flutter analyze</code>
+          e verifique se as dependências estão instaladas.
+        </p>
+      </div>
+
+      <div class="problem">
+        <h3>Erro de permissão no Firestore</h3>
+        <p>
+          Confirme a autenticação, o caminho dos documentos e as regras de
+          segurança aplicadas ao banco de dados.
+        </p>
+      </div>
+
+      <div class="problem">
+        <h3>As plantas não aparecem</h3>
+        <p>
+          Verifique a conexão, o usuário autenticado, a leitura do Firestore
+          e as permissões de acesso.
+        </p>
+      </div>
+
+      <div class="page-nav">
+        <a href="#inicio">↑ Voltar ao início</a>
+        <a href="https://docs.flutter.dev/" target="_blank" rel="noopener noreferrer">
+          Documentação oficial do Flutter ↗
+        </a>
+      </div>
+
+      <footer>
+        <p><strong>PlantCare Docs</strong> · Manual técnico acadêmico</p>
+        <p>Atualize este documento sempre que o funcionamento do projeto mudar.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
